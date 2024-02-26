@@ -1,5 +1,26 @@
 # Examples of using pocketbase authentication in next.js
 
+## Getting Started
+
+Set environment variables in `.env.local`:
+
+```
+PB_URL=your_pocketbase_url
+```
+
+Set secure to false if you are not using https in development:
+
+```js
+// pb/login.ts (line 23)
+cookies().set("pb_auth", cookie, {
+  path: Path,
+  expires: new Date(Expires),
+  sameSite: SameSite,
+  httpOnly: true,
+  secure: true,
+});
+```
+
 ## Features
 
 - Handle login and logout with `authWithPassword`
