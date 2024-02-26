@@ -19,6 +19,8 @@ const login = async (identity: string, password: string) => {
       path: Path,
       expires: new Date(Expires),
       sameSite: SameSite,
+      httpOnly: true,
+      secure: true,
     });
   } catch (_) {
     // Fail to login
